@@ -35,5 +35,20 @@ namespace MoviesAPI.Controllers
 
             return Ok(genre);
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateAsync(int id, [FromBody] GenreDto dto)
+        {
+            var genre = await _context.Genres.SingleOrDefaultAsync(g => g.Id == id);
+
+            if (genre == null)
+                return NotFound($"No genre was found with ID: {id}");
+
+            genre.Name = dto.Name;
+
+            _context.SaveChanges();
+
+            return Ok(genre);
+        }
     }
 }
