@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using MoviesAPI.Dtos;
 using MoviesAPI.Models;
 using MoviesAPI.Services;
